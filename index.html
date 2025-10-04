@@ -2,43 +2,55 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina Personalizzata</title>
+  <title>Image Slider</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #5D1DA4, #9E47FF);
-      color: white;
       margin: 0;
-      padding: 20px;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+    .slides {
+      display: flex;
+      width: 500%;
+      animation: slide 15s infinite;
     }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: white;
-      color: #5D1DA4;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
+    .slides img {
+      width: 100%;
+      border-radius: 12px;
     }
-    .btn:hover {
-      background: #ddd;
+    @keyframes slide {
+      0% { margin-left: 0; }
+      20% { margin-left: 0; }
+      25% { margin-left: -100%; }
+      45% { margin-left: -100%; }
+      50% { margin-left: -200%; }
+      70% { margin-left: -200%; }
+      75% { margin-left: -300%; }
+      95% { margin-left: -300%; }
+      100% { margin-left: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>👋 Benvenuto nella mia app</h1>
-  <p>Questa è una pagina HTML personalizzata caricata in Glide con Web Embed.</p>
-  <a class="btn" href="https://www.openai.com" target="_blank">Visita OpenAI</a>
+  <div class="slider">
+    <div class="slides">
+      <img src="https://picsum.photos/id/1015/600/400" alt="img1">
+      <img src="https://picsum.photos/id/1016/600/400" alt="img2">
+      <img src="https://picsum.photos/id/1018/600/400" alt="img3">
+      <img src="https://picsum.photos/id/1019/600/400" alt="img4">
+    </div>
+  </div>
 </body>
 </html>
